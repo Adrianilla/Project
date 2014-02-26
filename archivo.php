@@ -1,6 +1,7 @@
 
 <?php 
-$nombre = $_POST['nombre']; 
+
+$nombre = $_POST['nombre']; //esta linea toma el dato del formulario con el nombre de la persona que se registro
 $apellido = $_POST['apellido']; 
 $cedula = $_POST['cedula']; 
 $telefono = $_POST['telefono']; 

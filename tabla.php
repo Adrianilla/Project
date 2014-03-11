@@ -1,11 +1,31 @@
  <?php // creando un nuevo archivo php
+
+ $valores=array();
  date_default_timezone_set("America/Costa_Rica");
       $fecha=date("dmY");
- $fh = fopen($fecha.".csv"); 
-  die("Could not open data file!");
+
+
+
  //leer cada línea del archivo usando datos delimitados por coma y recibir un rango de los valores delimitados por coma
+
+$fh = fopen("$fecha.csv","r"); 
+  die("Could not open data file!");
+
+ 
+while (($data=fgetcsv($fh,1000,","))!==FALSE) {
+		$count=0;
+		foreach ($data as $row) {
+			$valores[$i]=$row;
+			$count++;
+		}
+		$datos[]=$valores;
+	}
+
+fclose($fh);
+
 //Conectarse y seleccionar base de datos 
-$link = mysql_connect('localhost', 'root'); 
+
+$link = mysql_connect('localhost', 'root','12345'); 
 if (!$link) { 
 die('Could not connect: ' . mysql_error()); 
 } 
@@ -27,11 +47,6 @@ while (($data = fgetcsv($fh)))
  $result = mysql_query($query); if (!$result) die("Error inserting data into MySQL!"); }
     // cierra el archivo
 
-     fclose($fh); 
-
-
-
-
-
+     
   ?>
 

@@ -7,7 +7,7 @@
  //leer cada línea del archivo usando datos delimitados por coma y recibir un rango de los valores delimitados por coma
 
 $fh = fopen("$fecha.csv","r"); //abrir el archivo
-  die("Could not open data file!");
+  
 
  
 while (($data=fgetcsv($fh,1000,","))!==FALSE) {
@@ -20,7 +20,7 @@ while (($data=fgetcsv($fh,1000,","))!==FALSE) {
 	}
 //Conectarse y seleccionar base de datos 
 
-$link = mysql_connect('localhost', 'root','12345'); 
+$link = mysql_connect('localhost', 'root',''); 
 if (!$link) { 
 die('Could not connect: ' . mysql_error()); 
 } 

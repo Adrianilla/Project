@@ -1,14 +1,12 @@
  <?php // creando un nuevo archivo php
 
- $valores=array();
- date_default_timezone_set("America/Costa_Rica");
-      $fecha=date("dmY");
-
-
+ $valores=array();// creacion de arreglo
+ date_default_timezone_set("America/Costa_Rica");//asignar hora por default
+      $fecha=date("dmY");// formato especifico de hora
 
  //leer cada línea del archivo usando datos delimitados por coma y recibir un rango de los valores delimitados por coma
 
-$fh = fopen("$fecha.csv","r"); 
+$fh = fopen("$fecha.csv","r"); //abrir el archivo
   die("Could not open data file!");
 
  
@@ -20,9 +18,6 @@ while (($data=fgetcsv($fh,1000,","))!==FALSE) {
 		}
 		$datos[]=$valores;
 	}
-
-
-
 //Conectarse y seleccionar base de datos 
 
 $link = mysql_connect('localhost', 'root','12345'); 
@@ -30,8 +25,6 @@ if (!$link) {
 die('Could not connect: ' . mysql_error()); 
 } 
 echo 'Connected successfully'; 
-
-
 
 $db_selected = mysql_select_db('proyecto', $link); 
 if (!$db_selected) { 

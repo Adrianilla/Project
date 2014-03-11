@@ -21,7 +21,7 @@ while (($data=fgetcsv($fh,1000,","))!==FALSE) {
 		$datos[]=$valores;
 	}
 
-fclose($fh);
+
 
 //Conectarse y seleccionar base de datos 
 
@@ -46,7 +46,7 @@ while (($data = fgetcsv($fh)))
 //Ejecuta la búsqueda MySQL para insertar los datos en la tabla.
  $result = mysql_query($query); if (!$result) die("Error inserting data into MySQL!"); }
     // cierra el archivo
-
+fclose($fh);
      
   ?>
 

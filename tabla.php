@@ -13,8 +13,7 @@ $fh = fopen("$fecha.csv","r"); //abrir el archivo
 while (($data=fgetcsv($fh,1000,","))!==FALSE) {
 		$count=0;
 		foreach ($data as $row) {
-			$valores[$i]=$row;
-			$count++;
+						$count++;
 		}
 		$datos[]=$valores;
 	}
